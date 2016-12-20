@@ -1,0 +1,63 @@
+
+body {
+    width: 100%;
+    height: 100%;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+@media(min-width:767px) {
+    .navbar {
+        padding: 20px 0;
+        -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        transition: background .5s ease-in-out,padding .5s ease-in-out;
+    }
+
+    .top-nav-collapse {
+        padding: 0;
+    }
+}
+
+/* Section CSS */
+
+.intro-section {
+    height: 100%;
+    padding-top: 150px;
+    text-align: center;
+    background: #222;
+}
+
+.about-section {
+    height: 100%;
+    padding-top: 200px;
+    text-align: center;
+    background: #303030;
+}
+
+.projects-section {
+    height: 100%;
+    padding-top: 200px;
+    text-align: center;
+    background: #222;
+}
+
+.project-view {
+	width: 300px;
+	display: inline-block;
+}
+
+.contact-section {
+    height: 100%;
+    padding-top: 200px;
+    text-align: center;
+    background: #303030;
+}
+
+.footer {
+	background-color: #00bc8c;
+	padding-top: 15px;
+}
