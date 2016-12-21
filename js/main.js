@@ -1,29 +1,22 @@
-//workaround to get scrollspy working on codepen
-$('body').scrollspy({
-    target: ".navbar",
-    offset: 75
-});
-
 //jQuery to collapse the navbar on scroll and fade in and out navbar
+$('document').ready(function(){
+    $('[data-spy="scroll"]').each(function () {
+        $(this).scrollspy('refresh');
+    });
+});
 var navOffset = $(".navbar-fixed-top").offset().top;
 
 $(document).scroll(function() {
 
-	var scrollPos = jQuery(window).scrollTop();
+	var scrollPos = $(window).scrollTop();
 	$(".navbar-fixed-top").stop(true);
 
 	if (scrollPos > navOffset) {
         $(".navbar-fixed-top").addClass("top-nav-collapse");
 				$(".navbar-fixed-top").removeClass("top-nav-default");
-				$('[data-spy="scroll"]').each(function () {
-				  var $spy = $(this).scrollspy('refresh')
-				})
     } else {
         $(".navbar-fixed-top").removeClass("top-nav-collapse");
 				$(".navbar-fixed-top").addClass("top-nav-default");
-				$('[data-spy="scroll"]').each(function () {
-				  var $spy = $(this).scrollspy('refresh')
-				})
     }
 });
 
