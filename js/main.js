@@ -4,10 +4,6 @@ $('body').scrollspy({
     offset: 75
 });
 
-$('[data-spy="scroll"]').each(function () {
-  var $spy = $(this).scrollspy('refresh')
-})
-
 //jQuery to collapse the navbar on scroll and fade in and out navbar
 var navOffset = $(".navbar-fixed-top").offset().top;
 
@@ -19,9 +15,15 @@ $(document).scroll(function() {
 	if (scrollPos > navOffset) {
         $(".navbar-fixed-top").addClass("top-nav-collapse");
 				$(".navbar-fixed-top").removeClass("top-nav-default");
+				$('[data-spy="scroll"]').each(function () {
+				  var $spy = $(this).scrollspy('refresh')
+				})
     } else {
         $(".navbar-fixed-top").removeClass("top-nav-collapse");
 				$(".navbar-fixed-top").addClass("top-nav-default");
+				$('[data-spy="scroll"]').each(function () {
+				  var $spy = $(this).scrollspy('refresh')
+				})
     }
 });
 
