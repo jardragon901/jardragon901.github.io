@@ -1,19 +1,36 @@
-//jQuery to collapse the navbar on scroll
-$(window).scroll(function() {
-    if ($(".navbar").offset().top > 50) {
+//workaround to get scrollspy working on codepen
+$('body').scrollspy({
+    target: ".navbar",
+    offset: 75
+});
+
+//jQuery to collapse the navbar on scroll and fade in and out navbar
+var navOffset = $(".navbar-fixed-top").offset().top;
+
+$(document).scroll(function() {
+
+	var scrollPos = jQuery(window).scrollTop();
+	$(".navbar-fixed-top").stop(true);
+
+	if (scrollPos > navOffset) {
         $(".navbar-fixed-top").addClass("top-nav-collapse");
+				$(".navbar-fixed-top").removeClass("top-nav-default");
     } else {
         $(".navbar-fixed-top").removeClass("top-nav-collapse");
+				$(".navbar-fixed-top").addClass("top-nav-default");
     }
 });
 
-//jQuery for page scrolling feature - requires jQuery Easing plugin
-$(function() {
-    $('a.page-scroll').bind('click', function(event) {
-        var $anchor = $(this);
-        $('html, body').stop().animate({
-            scrollTop: $($anchor.attr('href')).offset().top
-        }, 1500, 'easeInOutExpo');
+
+// smooth scrolling from links
+$(".navbar-ex1-collapse a, .navbar-brand, #aboutbtn").on('click', function(event) {
+    if (this.hash !== "") {
         event.preventDefault();
-    });
+        var hash = this.hash;
+        $('html, body').animate({
+            scrollTop: $(hash).offset().top
+        }, 800, function() {
+            window.location.hash = hash;
+        });
+    }
 });
