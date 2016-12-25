@@ -1,0 +1,132 @@
+---
+title: Dragon's Corner
+timezone: America/Chicago
+collections:
+  posts:
+    title: Posts
+    output: true
+  uploads:
+    title: Uploads
+    output: true
+defaults:
+- scope:
+    path: ''
+    type: posts
+  values:
+    layout: post
+    comments: true
+    social-share: true
+- scope:
+    path: ''
+  values:
+    layout: page
+    show-avatar: true
+url: http://jardragon901.github.io
+baseurl: 
+description: A virtual proof that jardragon901 is awesome!
+navbar-links:
+  About Me: aboutme
+  Resources:
+  - Beautiful Jekyll: http://deanattali.com/beautiful-jekyll/
+  - Learn markdown: http://www.markdowntutorial.com/
+  - GitHub Pages: https://pages.github.com/
+  Home: http://jardragon901.github.io
+avatar: "/img/avatar-icon.png"
+author:
+  name: jardragon901
+  email: carodegato@gmail.com
+  facebook: yourname
+  github: jardragon901
+  twitter: jardragon901
+  reddit: yourname
+  google-plus: "+yourname"
+  linkedin: yourname
+  xing: yourname
+  stackoverflow: yourlink
+  snapchat: yourname
+  instagram: yourname
+  youtube: yourlink
+  spotify: yourname
+  telephone: yourphone
+footer-links-active:
+  rss: true
+  facebook: false
+  email: true
+  twitter: true
+  google-plus: false
+  github: true
+  reddit: false
+  linkedin: false
+  xing: false
+  stackoverflow: false
+  snapchat: false
+  instagram: false
+  youtube: false
+  spotify: false
+  telephone: false
+share-links-active:
+  twitter: true
+  facebook: true
+  google: false
+  linkedin: true
+url-pretty: jardragon901.github.io
+excerpt_length: 50
+markdown: kramdown
+highlighter: rouge
+permalink: "/:year-:month-:day-:title/"
+paginate: 5
+kramdown:
+  input: GFM
+link-tags: false
+exclude:
+- Gemfile
+- Gemfile.lock
+- LICENSE
+- README.md
+- CNAME
+- Vagrantfile
+prose:
+  rooturl: _posts
+  media: img
+  ignore:
+  - 404.html
+  - LICENSE
+  - feed.xml
+  - _config.yml
+  - "/_layouts"
+  - "/_includes"
+  - "/css"
+  - "/img"
+  - "/js"
+  metadata:
+    _posts:
+    - name: layout
+      field:
+        element: hidden
+        value: post
+    - name: title
+      field:
+        element: text
+        label: Post title
+        placeholder: Title
+        alterable: true
+    - name: subtitle
+      field:
+        element: textarea
+        label: Subtitle
+        placeholder: A description of your post.
+        alterable: true
+    - name: date
+      field:
+        element: text
+        label: Date
+        help: Enter date of post.
+        placeholder: yyyy-mm-dd
+        alterable: true
+    - name: published
+      field:
+        element: checkbox
+        label: Publish
+        help: Check to publish post, uncheck to hide.
+gems:
+- jekyll-paginate
